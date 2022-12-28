@@ -37,7 +37,7 @@ class _NavigationState extends State<Navigation> {
                 //     ? Navigator.push(
                 //         context,
                 //         MaterialPageRoute(
-                //           builder: (context) => HomePageAlumni(),
+                //           builder: (context) => AlumniProfile(),
                 //         ))
                 //     : null;
               },
@@ -46,8 +46,7 @@ class _NavigationState extends State<Navigation> {
           defaultSelectedIndex: 0,
         ),
         //Body content of selected option from navigation bar
-        body: SingleChildScrollView(
-            child: _widgetOptions.elementAt(_selectedItem)),
+        body: _widgetOptions.elementAt(_selectedItem),
       ),
     );
   }
