@@ -1,4 +1,4 @@
-import 'package:fkaa_donation/constant.dart';
+import 'package:fkaa_donation/screen/constant.dart';
 import 'package:flutter/material.dart';
 
 class CustomBottomNavigationBar extends StatefulWidget {

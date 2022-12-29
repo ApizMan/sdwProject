@@ -1,7 +1,8 @@
-import 'package:fkaa_donation/alumni/application/application_alumni.dart';
-import 'package:fkaa_donation/alumni/homepage_alumni/homepage_alumni.dart';
-import 'package:fkaa_donation/alumni/profile/alumni_profile.dart';
-import 'package:fkaa_donation/navigation_bar/custom_bottom_navigation_bar.dart';
+import 'package:fkaa_donation/screen/alumni/application/application_alumni.dart';
+import 'package:fkaa_donation/screen/alumni/donation/donation_alumni.dart';
+import 'package:fkaa_donation/screen/alumni/homepage_alumni/homepage_alumni.dart';
+import 'package:fkaa_donation/screen/alumni/profile/alumni_profile.dart';
+import 'package:fkaa_donation/screen/navigation_bar/custom_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 
 class Navigation extends StatefulWidget {
@@ -15,7 +16,7 @@ class _NavigationState extends State<Navigation> {
   static List<Widget> _widgetOptions = <Widget>[
     HomePageAlumni(),
     AlumniProfile(),
-    Text("Donation"),
+    DonationAlumni(),
     ApplicationAlumni(),
   ];
   @override

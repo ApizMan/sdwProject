@@ -1,4 +1,4 @@
-import 'package:fkaa_donation/alumni/homepage_alumni/components/item_body.dart';
+import 'package:fkaa_donation/screen/alumni/homepage_alumni/components/item_body.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';

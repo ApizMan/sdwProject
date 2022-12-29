@@ -1,19 +1,18 @@
-// ignore_for_file: deprecated_member_use
-
-import 'package:fkaa_donation/alumni/homepage_alumni/components/body_homepage.dart';
-import 'package:fkaa_donation/constant.dart';
+import 'package:fkaa_donation/screen/alumni/profile/components/alumni_profile_body.dart';
+import 'package:fkaa_donation/screen/constant.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
-class HomePageAlumni extends StatefulWidget {
-  const HomePageAlumni({super.key});
+class AlumniProfile extends StatefulWidget {
+  const AlumniProfile({super.key});
 
   @override
-  State<HomePageAlumni> createState() => _HomePageAlumniState();
+  State<AlumniProfile> createState() => _AlumniProfileState();
 }
 
-class _HomePageAlumniState extends State<HomePageAlumni> {
+class _AlumniProfileState extends State<AlumniProfile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,40 +25,21 @@ class _HomePageAlumniState extends State<HomePageAlumni> {
               color: appBarBackground,
             ),
             child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                SizedBox(
-                  width: 10,
-                ),
-                Column(
-                  children: [
-                    SizedBox(
-                      height: 20,
-                    ),
-                    GestureDetector(
-                      onTap: () {},
-                      child: CircleAvatar(
-                        backgroundColor: Colors.black,
-                        child: Icon(
-                          Icons.person,
-                          color: appBarBackground,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
                 SizedBox(
                   width: 20,
                 ),
                 Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     SizedBox(
                       height: 23,
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(left: 40),
+                      padding: const EdgeInsets.only(left: 140),
                       child: Text(
-                        "FKAA E-Donation",
+                        "Profile",
                         style: TextStyle(
                           shadows: [
                             Shadow(
@@ -85,10 +65,7 @@ class _HomePageAlumniState extends State<HomePageAlumni> {
             child: Container(
               width: MediaQuery.of(context).size.width * 1.0,
               height: double.infinity,
-              child: SingleChildScrollView(
-                physics: BouncingScrollPhysics(),
-                child: BodyHomepage(),
-              ),
+              child: AlumniProfileBody(),
               decoration: BoxDecoration(
                 color: kWhite,
                 border: Border.all(
