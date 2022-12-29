@@ -1,5 +1,5 @@
+import 'package:fkaa_donation/constant.dart';
 import 'package:fkaa_donation/public_component/custom_button_navigator.dart';
-import 'package:fkaa_donation/screen/constant.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
