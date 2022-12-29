@@ -12,3 +12,4 @@ const kPrimaryColor = Color.fromARGB(255, 56, 107, 169);
 const appBarBackground = Color.fromRGBO(106, 206, 228, 1);
 const boxHomepage = Color.fromRGBO(89, 142, 153, 1);
 const appBarcolor = Color.fromRGBO(38, 90, 90, 1);
+const textLink = Color.fromRGBO(6, 19, 86, 1);

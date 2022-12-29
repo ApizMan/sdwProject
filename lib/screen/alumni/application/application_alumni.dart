@@ -16,8 +16,8 @@ class _ApplicationAlumniState extends State<ApplicationAlumni> {
   Widget build(BuildContext context) {
     return CustomLayout(
       body: ApplicationAlumniBody(),
-      title: "Application",
-      centerTitle: 130,
+      title: "Application Recommendation",
+      centerTitle: 25,
     );
   }
 }

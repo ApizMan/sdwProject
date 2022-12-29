@@ -72,7 +72,7 @@ class _LoginState extends State<Login> {
                   ),
                   //Space
                   SizedBox(
-                    height: 20,
+                    height: 50,
                   ),
                   //ID matrik number
                   Padding(
@@ -189,7 +189,7 @@ class _LoginState extends State<Login> {
                   ),
                   //space
                   const SizedBox(
-                    height: 100,
+                    height: 70,
                   ),
                   //sign in button
                   Padding(
