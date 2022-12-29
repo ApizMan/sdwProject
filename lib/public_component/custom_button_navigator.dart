@@ -8,11 +8,17 @@ class CustomButtonNavigator extends StatefulWidget {
   final IconData icon_prefix;
   final IconData icon_navigate;
   final String text;
+  final bool navigation;
+  final String? text_elevateButton;
+  final Function? onPress;
   const CustomButtonNavigator({
     super.key,
     required this.icon_prefix,
     required this.icon_navigate,
     required this.text,
+    required this.navigation,
+    this.text_elevateButton,
+    this.onPress,
   });
 
   @override
@@ -27,18 +33,20 @@ class _CustomButtonNavigatorState extends State<CustomButtonNavigator> {
       child: Container(
         height: MediaQuery.of(context).size.height * 0.06,
         margin: EdgeInsets.symmetric(horizontal: 50),
-        decoration: BoxDecoration(
-          color: kWhite,
-          borderRadius: BorderRadius.circular(10),
-          boxShadow: [
-            BoxShadow(
-              offset: Offset.fromDirection(11),
-              color: Colors.black26,
-              spreadRadius: 1.0,
-              blurRadius: 10.0,
-            ),
-          ],
-        ),
+        decoration: widget.navigation == true
+            ? BoxDecoration(
+                color: kWhite,
+                borderRadius: BorderRadius.circular(10),
+                boxShadow: [
+                  BoxShadow(
+                    offset: Offset.fromDirection(11),
+                    color: Colors.black26,
+                    spreadRadius: 1.0,
+                    blurRadius: 10.0,
+                  ),
+                ],
+              )
+            : null,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -52,9 +60,26 @@ class _CustomButtonNavigatorState extends State<CustomButtonNavigator> {
                   width: 10,
                 ),
                 Text(widget.text),
+                widget.navigation == true
+                    ? SizedBox()
+                    : SizedBox(
+                        width: 30,
+                      ),
               ],
             ),
-            Icon(widget.icon_navigate),
+            widget.navigation == true
+                ? Icon(widget.icon_navigate)
+                : Row(
+                    children: [
+                      SizedBox(
+                        width: 80,
+                      ),
+                      TextButton(
+                        onPressed: () => widget.onPress,
+                        child: Text(widget.text_elevateButton!),
+                      ),
+                    ],
+                  ),
           ],
         ),
       ),

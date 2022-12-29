@@ -20,6 +20,7 @@ class _AlumniProfileChoiceState extends State<AlumniProfileChoice> {
         //   height: 30,
         // ),
         CustomButtonNavigator(
+          navigation: true,
           icon_navigate: Icons.arrow_forward_ios,
           icon_prefix: Icons.person,
           text: "My Profile",
@@ -28,6 +29,7 @@ class _AlumniProfileChoiceState extends State<AlumniProfileChoice> {
           height: 15,
         ),
         CustomButtonNavigator(
+          navigation: true,
           icon_navigate: Icons.arrow_forward_ios,
           icon_prefix: Icons.money,
           text: "Donation",
@@ -36,6 +38,7 @@ class _AlumniProfileChoiceState extends State<AlumniProfileChoice> {
           height: 15,
         ),
         CustomButtonNavigator(
+          navigation: true,
           icon_navigate: Icons.arrow_forward_ios,
           icon_prefix: Icons.logout,
           text: "Logout",
