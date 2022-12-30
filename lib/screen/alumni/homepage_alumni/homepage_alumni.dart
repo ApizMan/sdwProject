@@ -16,9 +16,10 @@ class _HomePageAlumniState extends State<HomePageAlumni> {
   @override
   Widget build(BuildContext context) {
     return CustomLayout(
+      haveBackButton: false,
       body: BodyHomepage(),
       title: "FKAA E-Donation",
-      centerTitle: 100,
+      centerTitle: 130,
     );
   }
 }

@@ -15,9 +15,10 @@ class _ApplicationAlumniState extends State<ApplicationAlumni> {
   @override
   Widget build(BuildContext context) {
     return CustomLayout(
+      haveBackButton: false,
       body: ApplicationAlumniBody(),
       title: "Application Recommendation",
-      centerTitle: 25,
+      centerTitle: 60,
     );
   }
 }

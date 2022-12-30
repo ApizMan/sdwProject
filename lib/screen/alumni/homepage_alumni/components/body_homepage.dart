@@ -43,6 +43,9 @@ class _BodyHomepageState extends State<BodyHomepage> {
             ),
           ],
         ),
+        SizedBox(
+          height: 20,
+        ),
         const ItemBody(),
       ],
     );

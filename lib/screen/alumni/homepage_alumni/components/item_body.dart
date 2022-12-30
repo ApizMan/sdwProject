@@ -29,32 +29,89 @@ class _ItemBodyState extends State<ItemBody> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        ListView.builder(
+        AspectRatio(
+          aspectRatio: 9 / 15,
+          child: ListView.builder(
             shrinkWrap: true,
             itemCount: imageCard.length,
             itemBuilder: (context, index) {
-              return Center(
-                child: Stack(
-                  clipBehavior: Clip.none,
-                  children: [
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width * 0.7,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          SizedBox(
-                            height: 20,
-                          ),
-                          Container(
-                            margin: EdgeInsets.only(bottom: 50.0),
-                            child: Image(
-                              image: AssetImage(
-                                imageCard[index],
+              return Column(
+                children: [
+                  Center(
+                    child: Stack(
+                      clipBehavior: Clip.none,
+                      children: [
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * 0.7,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              SizedBox(
+                                height: 20,
                               ),
-                              fit: BoxFit.fill,
+                              Container(
+                                margin: EdgeInsets.only(bottom: 50.0),
+                                child: Image(
+                                  image: AssetImage(
+                                    imageCard[index],
+                                  ),
+                                  fit: BoxFit.fill,
+                                ),
+                                decoration: BoxDecoration(
+                                  color: kWhite,
+                                  boxShadow: [
+                                    BoxShadow(
+                                      offset: Offset.fromDirection(10, 2.0),
+                                      color: Colors.black26,
+                                      spreadRadius: 5.0,
+                                      blurRadius: 5.0,
+                                    ),
+                                  ],
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(30)),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Positioned(
+                          top: 150,
+                          left: 45,
+                          child: Container(
+                            alignment: Alignment.center,
+                            height: MediaQuery.of(context).size.height * 0.1,
+                            width: MediaQuery.of(context).size.width * 0.5,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Text('Join for donation!'),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    SizedBox(
+                                      width: 15,
+                                    ),
+                                    Text('Donate Now'),
+                                    SizedBox(
+                                      width: 2,
+                                    ),
+                                    GestureDetector(
+                                        onTap: () {},
+                                        child: IconButton(
+                                          icon: Icon(
+                                            Icons.arrow_circle_right_outlined,
+                                          ),
+                                          onPressed: () {},
+                                        ))
+                                  ],
+                                ),
+                              ],
                             ),
                             decoration: BoxDecoration(
-                              color: kWhite,
+                              color: boxHomepage,
                               boxShadow: [
                                 BoxShadow(
                                   offset: Offset.fromDirection(10, 2.0),
@@ -67,63 +124,21 @@ class _ItemBodyState extends State<ItemBody> {
                                   BorderRadius.all(Radius.circular(30)),
                             ),
                           ),
-                        ],
-                      ),
-                    ),
-                    Positioned(
-                      top: 150,
-                      left: 45,
-                      child: Container(
-                        alignment: Alignment.center,
-                        height: MediaQuery.of(context).size.height * 0.12,
-                        width: MediaQuery.of(context).size.width * 0.5,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            SizedBox(
-                              height: 10,
-                            ),
-                            Text('Join for donation!'),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                SizedBox(
-                                  width: 15,
-                                ),
-                                Text('Donate Now'),
-                                SizedBox(
-                                  width: 2,
-                                ),
-                                GestureDetector(
-                                    onTap: () {},
-                                    child: IconButton(
-                                      icon: Icon(
-                                        Icons.arrow_circle_right_outlined,
-                                      ),
-                                      onPressed: () {},
-                                    ))
-                              ],
-                            ),
-                          ],
                         ),
-                        decoration: BoxDecoration(
-                          color: boxHomepage,
-                          boxShadow: [
-                            BoxShadow(
-                              offset: Offset.fromDirection(10, 2.0),
-                              color: Colors.black26,
-                              spreadRadius: 5.0,
-                              blurRadius: 5.0,
-                            ),
-                          ],
-                          borderRadius: BorderRadius.all(Radius.circular(30)),
-                        ),
-                      ),
+                      ],
                     ),
-                  ],
-                ),
+                  ),
+                  SizedBox(
+                    height: 30,
+                  ),
+                ],
               );
-            }),
+            },
+          ),
+        ),
+        SizedBox(
+          height: 30,
+        ),
       ],
     );
   }

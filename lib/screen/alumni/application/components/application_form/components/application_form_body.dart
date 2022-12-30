@@ -1,60 +1,28 @@
 import 'package:fkaa_donation/constant.dart';
+import 'package:fkaa_donation/public_component/custom_card.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
-class CustomCard extends StatefulWidget {
-  final String name;
-  final String time;
-  final String description;
-  final IconData iconTime;
-  final String? textLink;
-  final Function? onPressDetail;
-  final Widget? onPressAccept;
-  final Widget? onPressDecline;
-  const CustomCard({
-    super.key,
-    required this.name,
-    required this.iconTime,
-    required this.time,
-    required this.description,
-    required this.textLink,
-    required this.onPressDetail,
-    required this.onPressAccept,
-    required this.onPressDecline,
-  });
+class ApplicationFormBody extends StatefulWidget {
+  const ApplicationFormBody({super.key});
 
   @override
-  State<CustomCard> createState() => _CustomCardState();
+  State<ApplicationFormBody> createState() => _ApplicationFormBodyState();
 }
 
-class _CustomCardState extends State<CustomCard> {
+class _ApplicationFormBodyState extends State<ApplicationFormBody> {
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: AspectRatio(
-        aspectRatio: 6.2 / 2,
-        child: Container(
-          margin: EdgeInsets.symmetric(vertical: 10),
-          decoration: BoxDecoration(
-            color: kWhite,
-            border: Border.all(
-              width: 2,
-              color: Colors.black12,
-            ),
-            boxShadow: [
-              BoxShadow(
-                offset: Offset.fromDirection(11, 3),
-                color: Colors.black26,
-                spreadRadius: 1.0,
-                blurRadius: 1.0,
-              ),
-            ],
-            borderRadius: BorderRadius.circular(30),
+      child: Column(
+        children: [
+          SizedBox(
+            height: 30,
           ),
-          child: Stack(
+          Stack(
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -91,7 +59,7 @@ class _CustomCardState extends State<CustomCard> {
                     width: 25,
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 15.0),
+                    padding: const EdgeInsets.symmetric(vertical: 45.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.start,
@@ -99,7 +67,7 @@ class _CustomCardState extends State<CustomCard> {
                         Container(
                           width: MediaQuery.of(context).size.width * 0.6,
                           child: Text(
-                            widget.name,
+                            "Muhammad Ikhmal Akif Bin Ilhtizam",
                             style: TextStyle(
                               fontFamily: "Poppins",
                               fontSize: 18,
@@ -115,7 +83,7 @@ class _CustomCardState extends State<CustomCard> {
                         Row(
                           children: [
                             Icon(
-                              widget.iconTime,
+                              Icons.access_time,
                               size: 15,
                               color: Colors.grey,
                             ),
@@ -123,7 +91,7 @@ class _CustomCardState extends State<CustomCard> {
                               width: 2,
                             ),
                             Text(
-                              widget.time,
+                              "45m",
                               style: TextStyle(
                                 fontFamily: "Poppins",
                                 fontSize: 10,
@@ -138,7 +106,7 @@ class _CustomCardState extends State<CustomCard> {
                         Container(
                           width: MediaQuery.of(context).size.width * 0.4,
                           child: Text(
-                            widget.description,
+                            "Discription",
                             style: TextStyle(
                               fontFamily: "Poppins",
                               fontSize: 12,
@@ -150,69 +118,45 @@ class _CustomCardState extends State<CustomCard> {
                             softWrap: true,
                           ),
                         ),
-                        SizedBox(
-                          height: 5,
-                        ),
-                        GestureDetector(
-                          onTap: () => widget.onPressDetail,
-                          child: Text(
-                            widget.textLink!,
-                            style: TextStyle(
-                              fontFamily: "Poppins",
-                              fontSize: 14,
-                              color: textLink,
-                              fontWeight: FontWeight.bold,
-                              decoration: TextDecoration.underline,
-                            ),
-                          ),
-                        ),
                       ],
                     ),
                   ),
                 ],
               ),
-              Positioned(
-                top: 50,
-                left: 315,
-                child: Row(
-                  children: [
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => widget.onPressAccept!,
-                          ),
-                        );
-                      },
-                      child: Icon(
-                        Icons.subtitles,
-                        size: 30,
-                      ),
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => widget.onPressDecline!,
-                          ),
-                        );
-                      },
-                      child: Icon(
-                        Icons.subtitles_off_outlined,
-                        size: 30,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
             ],
           ),
-        ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: TextFormField(
+              keyboardType: TextInputType.multiline,
+              textInputAction: TextInputAction.newline,
+              maxLines: 28,
+              style: TextStyle(fontSize: 20.0),
+              // maxLength: 5,
+              decoration: InputDecoration(
+                filled: true,
+                fillColor: Colors.grey.shade200,
+                labelText: "Notes",
+                labelStyle: TextStyle(fontSize: 20),
+                hintText: 'This example student need money',
+                hintStyle: TextStyle(fontSize: 20),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(32.0)),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderSide:
+                      BorderSide(color: Colors.lightBlueAccent, width: 1.0),
+                  borderRadius: BorderRadius.all(Radius.circular(32.0)),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderSide:
+                      BorderSide(color: Colors.lightBlueAccent, width: 2.0),
+                  borderRadius: BorderRadius.all(Radius.circular(32.0)),
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

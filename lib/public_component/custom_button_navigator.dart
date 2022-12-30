@@ -10,7 +10,8 @@ class CustomButtonNavigator extends StatefulWidget {
   final String text;
   final bool navigation;
   final String? text_elevateButton;
-  final Function? onPress;
+  final Widget? onPress;
+  final Widget? onPressNavigate;
   const CustomButtonNavigator({
     super.key,
     required this.icon_prefix,
@@ -19,6 +20,7 @@ class CustomButtonNavigator extends StatefulWidget {
     required this.navigation,
     this.text_elevateButton,
     this.onPress,
+    this.onPressNavigate,
   });
 
   @override
@@ -29,7 +31,14 @@ class _CustomButtonNavigatorState extends State<CustomButtonNavigator> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => widget.onPressNavigate!,
+          ),
+        );
+      },
       child: Container(
         height: MediaQuery.of(context).size.height * 0.06,
         margin: EdgeInsets.symmetric(horizontal: 50),
@@ -75,7 +84,14 @@ class _CustomButtonNavigatorState extends State<CustomButtonNavigator> {
                         width: 80,
                       ),
                       TextButton(
-                        onPressed: () => widget.onPress,
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => widget.onPress!,
+                            ),
+                          );
+                        },
                         child: Text(widget.text_elevateButton!),
                       ),
                     ],

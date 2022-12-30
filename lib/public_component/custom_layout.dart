@@ -7,11 +7,16 @@ class CustomLayout extends StatefulWidget {
   final Widget body;
   final String title;
   final double centerTitle;
-  const CustomLayout(
-      {super.key,
-      required this.body,
-      required this.title,
-      required this.centerTitle});
+  final IconData? backButton;
+  final bool haveBackButton;
+  const CustomLayout({
+    super.key,
+    required this.body,
+    required this.title,
+    required this.centerTitle,
+    this.backButton,
+    required this.haveBackButton,
+  });
 
   @override
   State<CustomLayout> createState() => _CustomLayoutState();
@@ -20,81 +25,102 @@ class CustomLayout extends StatefulWidget {
 class _CustomLayoutState extends State<CustomLayout> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
-        alignment: Alignment.center,
-        children: [
-          Container(
-            height: double.infinity,
-            decoration: BoxDecoration(
-              color: appBarBackground,
-            ),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(
-                  width: 10,
+    return SafeArea(
+      child: GestureDetector(
+        onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+        child: Scaffold(
+          body: Stack(
+            alignment: Alignment.center,
+            children: [
+              Container(
+                height: double.infinity,
+                decoration: BoxDecoration(
+                  color: appBarBackground,
                 ),
-                Column(
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     SizedBox(
-                      height: 23,
+                      width: 10,
                     ),
-                    Padding(
-                      padding: EdgeInsets.only(left: widget.centerTitle),
-                      child: Text(
-                        widget.title,
-                        style: TextStyle(
-                          shadows: [
-                            Shadow(
-                              color: Colors.blueGrey.shade500,
-                              blurRadius: 15,
-                              offset: Offset.fromDirection(10, -3.0),
+                    Column(
+                      children: [
+                        SizedBox(
+                          height: 23,
+                        ),
+                        Row(
+                          children: [
+                            widget.haveBackButton == true
+                                ? GestureDetector(
+                                    onTap: () {
+                                      Navigator.pop(context);
+                                    },
+                                    child: Icon(
+                                      widget.backButton,
+                                      size: 30,
+                                    ),
+                                  )
+                                : SizedBox(),
+                            Padding(
+                              padding:
+                                  EdgeInsets.only(left: widget.centerTitle),
+                              child: Text(
+                                widget.title,
+                                style: TextStyle(
+                                  shadows: [
+                                    Shadow(
+                                      color: Colors.blueGrey.shade500,
+                                      blurRadius: 15,
+                                      offset: Offset.fromDirection(10, -3.0),
+                                    ),
+                                  ],
+                                  fontSize: 26,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
                             ),
                           ],
-                          fontSize: 26,
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
                         ),
-                      ),
+                      ],
                     ),
                   ],
                 ),
-              ],
-            ),
-          ),
-          Positioned(
-            top: 75,
-            bottom: 0,
-            child: Container(
-              width: MediaQuery.of(context).size.width * 1.0,
-              height: double.infinity,
-              child: SingleChildScrollView(
-                physics: BouncingScrollPhysics(),
-                child: widget.body,
               ),
-              decoration: BoxDecoration(
-                color: kWhite,
-                border: Border.all(
-                  width: 2,
-                  color: Colors.black12,
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    offset: Offset.fromDirection(11, 5.0),
-                    color: Colors.black26,
-                    spreadRadius: 3.0,
-                    blurRadius: 3.0,
+              Positioned(
+                top: 75,
+                bottom: 0,
+                child: Container(
+                  width: MediaQuery.of(context).size.width * 1.0,
+                  height: double.infinity,
+                  child: SingleChildScrollView(
+                    physics: NeverScrollableScrollPhysics(),
+                    child: widget.body,
                   ),
-                ],
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(30),
-                  topRight: Radius.circular(30),
+                  decoration: BoxDecoration(
+                    color: kWhite,
+                    border: Border.all(
+                      width: 2,
+                      color: Colors.black12,
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        offset: Offset.fromDirection(11, 5.0),
+                        color: Colors.black26,
+                        spreadRadius: 3.0,
+                        blurRadius: 3.0,
+                      ),
+                    ],
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(30),
+                      topRight: Radius.circular(30),
+                    ),
+                  ),
                 ),
-              ),
-            ),
-          )
-        ],
+              )
+            ],
+          ),
+        ),
       ),
     );
     ;

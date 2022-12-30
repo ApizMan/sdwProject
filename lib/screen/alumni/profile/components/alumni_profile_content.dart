@@ -14,14 +14,16 @@ class _AlumniProfileContentState extends State<AlumniProfileContent> {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: SizedBox(
-        height: MediaQuery.of(context).size.height * 0.37,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            detailUser(context),
-            const AlumniProfileChoice(),
-          ],
+      child: AspectRatio(
+        aspectRatio: 4 / 3,
+        child: SizedBox(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              detailUser(context),
+              const AlumniProfileChoice(),
+            ],
+          ),
         ),
       ),
     );
@@ -29,7 +31,7 @@ class _AlumniProfileContentState extends State<AlumniProfileContent> {
 
   SizedBox detailUser(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.08,
+      height: MediaQuery.of(context).size.height * 0.05,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

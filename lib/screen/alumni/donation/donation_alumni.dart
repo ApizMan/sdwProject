@@ -16,11 +16,10 @@ class _DonationAlumniState extends State<DonationAlumni> {
   @override
   Widget build(BuildContext context) {
     return const CustomLayout(
-      body: SingleChildScrollView(
-        child: DonationAlumniBody(),
-      ),
+      haveBackButton: false,
+      body: DonationAlumniBody(),
       title: "Donation",
-      centerTitle: 140,
+      centerTitle: 170,
     );
   }
 }
