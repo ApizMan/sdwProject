@@ -16,11 +16,12 @@ class AlumniProfile extends StatefulWidget {
 class _AlumniProfileState extends State<AlumniProfile> {
   @override
   Widget build(BuildContext context) {
-    return CustomLayout(
-      haveBackButton: false,
-      body: AlumniProfileBody(),
-      title: "Profile",
-      centerTitle: 180,
+    return Center(
+      child: CustomLayout(
+        haveBackButton: false,
+        body: AlumniProfileBody(),
+        title: "Profile",
+      ),
     );
   }
 }

@@ -18,7 +18,6 @@ class _ApplicationAlumniState extends State<ApplicationAlumni> {
       haveBackButton: false,
       body: ApplicationAlumniBody(),
       title: "Application Recommendation",
-      centerTitle: 60,
     );
   }
 }

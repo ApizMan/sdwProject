@@ -17,7 +17,6 @@ class _DonationPaymentState extends State<DonationPayment> {
     return CustomLayout(
       body: DonationPaymentBody(),
       title: "Donation Payment",
-      centerTitle: 90,
       haveBackButton: true,
       backButton: Icons.arrow_back,
     );

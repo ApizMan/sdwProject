@@ -130,7 +130,7 @@ class _ApplicationFormBodyState extends State<ApplicationFormBody> {
             child: TextFormField(
               keyboardType: TextInputType.multiline,
               textInputAction: TextInputAction.newline,
-              maxLines: 28,
+              maxLines: 18,
               style: TextStyle(fontSize: 20.0),
               // maxLength: 5,
               decoration: InputDecoration(

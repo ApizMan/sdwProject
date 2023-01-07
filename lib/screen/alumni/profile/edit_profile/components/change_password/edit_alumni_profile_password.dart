@@ -18,7 +18,6 @@ class _EditAlumniProfilePasswordState extends State<EditAlumniProfilePassword> {
     return CustomLayout(
       body: ChangePasswordBody(),
       title: "New Password",
-      centerTitle: 110,
       haveBackButton: true,
       backButton: Icons.arrow_back,
     );

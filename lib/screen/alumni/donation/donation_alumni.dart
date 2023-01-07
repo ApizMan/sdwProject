@@ -19,7 +19,6 @@ class _DonationAlumniState extends State<DonationAlumni> {
       haveBackButton: false,
       body: DonationAlumniBody(),
       title: "Donation",
-      centerTitle: 170,
     );
   }
 }

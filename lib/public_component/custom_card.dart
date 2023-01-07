@@ -33,9 +33,9 @@ class _CustomCardState extends State<CustomCard> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 10),
       child: AspectRatio(
-        aspectRatio: 6.2 / 2,
+        aspectRatio: 6 / 2.08,
         child: Container(
           margin: EdgeInsets.symmetric(vertical: 10),
           decoration: BoxDecoration(

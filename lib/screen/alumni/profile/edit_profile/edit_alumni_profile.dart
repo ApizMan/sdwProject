@@ -20,7 +20,6 @@ class _EditAlumniProfileState extends State<EditAlumniProfile> {
       backButton: Icons.arrow_back,
       body: EditAlumniProfileBody(),
       title: "My Profile",
-      centerTitle: 125,
     );
   }
 }

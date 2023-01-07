@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.fkaa_donation">
    <application
-        android:label="FKAA E-Donation"
+        android:label="fkaa_donation"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

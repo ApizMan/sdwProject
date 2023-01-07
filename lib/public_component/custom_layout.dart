@@ -6,14 +6,12 @@ import 'package:flutter/src/widgets/framework.dart';
 class CustomLayout extends StatefulWidget {
   final Widget body;
   final String title;
-  final double centerTitle;
   final IconData? backButton;
   final bool haveBackButton;
   const CustomLayout({
     super.key,
     required this.body,
     required this.title,
-    required this.centerTitle,
     this.backButton,
     required this.haveBackButton,
   });
@@ -38,33 +36,31 @@ class _CustomLayoutState extends State<CustomLayout> {
                   color: appBarBackground,
                 ),
                 child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     SizedBox(
                       width: 10,
                     ),
-                    Column(
-                      children: [
-                        SizedBox(
-                          height: 23,
-                        ),
-                        Row(
-                          children: [
-                            widget.haveBackButton == true
-                                ? GestureDetector(
-                                    onTap: () {
-                                      Navigator.pop(context);
-                                    },
-                                    child: Icon(
-                                      widget.backButton,
-                                      size: 30,
-                                    ),
-                                  )
-                                : SizedBox(),
-                            Padding(
-                              padding:
-                                  EdgeInsets.only(left: widget.centerTitle),
-                              child: Text(
+                    Flexible(
+                      child: Column(
+                        children: [
+                          SizedBox(
+                            height: 23,
+                          ),
+                          Row(
+                            children: [
+                              widget.haveBackButton == true
+                                  ? GestureDetector(
+                                      onTap: () {
+                                        Navigator.pop(context);
+                                      },
+                                      child: Icon(
+                                        widget.backButton,
+                                        size: 30,
+                                      ),
+                                    )
+                                  : SizedBox(),
+                              Text(
                                 widget.title,
                                 style: TextStyle(
                                   shadows: [
@@ -79,10 +75,10 @@ class _CustomLayoutState extends State<CustomLayout> {
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
-                            ),
-                          ],
-                        ),
-                      ],
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),

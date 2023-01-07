@@ -19,7 +19,6 @@ class _HomePageAlumniState extends State<HomePageAlumni> {
       haveBackButton: false,
       body: BodyHomepage(),
       title: "FKAA E-Donation",
-      centerTitle: 130,
     );
   }
 }

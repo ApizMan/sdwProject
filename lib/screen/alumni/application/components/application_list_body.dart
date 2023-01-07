@@ -42,7 +42,7 @@ class _ApplicationListBodyState extends State<ApplicationListBody> {
           height: 20,
         ),
         AspectRatio(
-          aspectRatio: 9 / 16,
+          aspectRatio: 6 / 7.4,
           child: ListView.builder(
             shrinkWrap: true,
             itemCount: name.length,

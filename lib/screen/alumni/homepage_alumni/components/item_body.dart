@@ -30,7 +30,7 @@ class _ItemBodyState extends State<ItemBody> {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         AspectRatio(
-          aspectRatio: 9 / 15,
+          aspectRatio: 6 / 7.4,
           child: ListView.builder(
             shrinkWrap: true,
             itemCount: imageCard.length,

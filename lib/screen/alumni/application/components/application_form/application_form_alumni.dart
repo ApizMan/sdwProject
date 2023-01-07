@@ -16,10 +16,9 @@ class _ApplicationFormAlumniState extends State<ApplicationFormAlumni> {
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: 9 / 16,
+      aspectRatio: 6 / 7.4,
       child: CustomLayout(
         body: ApplicationFormBody(),
-        centerTitle: 35,
         title: "Application Recommendation",
         haveBackButton: true,
         backButton: Icons.arrow_back,
