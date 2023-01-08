@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "479138100404",
+    "project_id": "fkaadonation",
+    "storage_bucket": "fkaadonation.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:479138100404:android:05d73ccecdcb46295353e1",
+        "android_client_info": {
+          "package_name": "com.example.fkaa_donation"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "479138100404-ub4i05h02b5qh9oe02m0md6tjcivkhj5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUWc2O9pCkrIada-hmRfsTSlJyFXoIT_E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "479138100404-ub4i05h02b5qh9oe02m0md6tjcivkhj5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
