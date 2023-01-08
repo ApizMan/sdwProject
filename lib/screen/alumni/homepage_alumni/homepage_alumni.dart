@@ -1,6 +1,6 @@
 // ignore_for_file: deprecated_member_use
 import 'package:fkaa_donation/public_component/custom_layout.dart';
-import 'package:fkaa_donation/screen/alumni/homepage_alumni/components/body_homepage.dart';
+import 'package:fkaa_donation/screen/alumni/homepage_alumni/components/body_homepage_alumni.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -17,7 +17,7 @@ class _HomePageAlumniState extends State<HomePageAlumni> {
   Widget build(BuildContext context) {
     return CustomLayout(
       haveBackButton: false,
-      body: BodyHomepage(),
+      body: BodyHomepageAlumni(),
       title: "FKAA E-Donation",
     );
   }
