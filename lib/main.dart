@@ -1,4 +1,5 @@
-import 'package:fkaa_donation/screen/login/login.dart';
+//import 'package:fkaa_donation/screen/login/login.dart';
+import 'package:fkaa_donation/screen/login_staff/login_staff.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Login(),
+      home: LoginStaff(),
     );
   }
 }

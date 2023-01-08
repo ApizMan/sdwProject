@@ -17,13 +17,15 @@ class ApplicationFormStaff extends StatefulWidget {
 class _ApplicationFormStaffState extends State<ApplicationFormStaff> {
   @override
   Widget build(BuildContext context) {
-    return AspectRatio(
-      aspectRatio: 6 / 7.4,
-      child: CustomLayout(
-        body: ApplicationFormBodyStaff(),
-        title: "Recommendation Notes",
-        haveBackButton: true,
-        backButton: Icons.arrow_back,
+    return SingleChildScrollView(
+      child: AspectRatio(
+        aspectRatio: 6 / 11.7,
+        child: CustomLayout(
+          body: ApplicationFormBodyStaff(),
+          title: "Recommendation Notes",
+          haveBackButton: true,
+          backButton: Icons.arrow_back,
+        ),
       ),
     );
   }

@@ -129,15 +129,152 @@ class _ApplicationFormBodyStaffState extends State<ApplicationFormBodyStaff> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: TextFormField(
+              readOnly: true,
               keyboardType: TextInputType.multiline,
               textInputAction: TextInputAction.newline,
-              maxLines: 18,
+              maxLines: 8,
               style: TextStyle(fontSize: 20.0),
               // maxLength: 5,
               decoration: InputDecoration(
                 filled: true,
                 fillColor: Colors.grey.shade200,
-                labelText: "Notes",
+                labelStyle: TextStyle(fontSize: 20),
+                hintText: 'This example student need money',
+                hintStyle: TextStyle(fontSize: 20),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(32.0)),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderSide:
+                      BorderSide(color: Colors.lightBlueAccent, width: 1.0),
+                  borderRadius: BorderRadius.all(Radius.circular(32.0)),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderSide:
+                      BorderSide(color: Colors.lightBlueAccent, width: 2.0),
+                  borderRadius: BorderRadius.all(Radius.circular(32.0)),
+                ),
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 30,
+          ),
+          Stack(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    width: 20,
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      shape: BoxShape.circle,
+                      boxShadow: [
+                        BoxShadow(
+                            offset: Offset.fromDirection(10, 2.0),
+                            blurRadius: 12,
+                            color: kBlack,
+                            spreadRadius: 2)
+                      ],
+                    ),
+                    width: MediaQuery.of(context).size.width * 0.15,
+                    height: MediaQuery.of(context).size.height * 0.15,
+                    child: CircleAvatar(
+                      radius: 30.0,
+                      backgroundColor: kBlack,
+                      child: Icon(
+                        Icons.person_rounded,
+                        color: kWhite,
+                        size: 50,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 25,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 45.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Container(
+                          width: MediaQuery.of(context).size.width * 0.6,
+                          child: Text(
+                            "Akmal Azhar",
+                            style: TextStyle(
+                              fontFamily: "Poppins",
+                              fontSize: 18,
+                              fontWeight: FontWeight.w600,
+                            ),
+                            maxLines: 2,
+                            softWrap: true,
+                          ),
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Row(
+                          children: [
+                            Icon(
+                              Icons.access_time,
+                              size: 15,
+                              color: Colors.grey,
+                            ),
+                            SizedBox(
+                              width: 2,
+                            ),
+                            Text(
+                              "45m",
+                              style: TextStyle(
+                                fontFamily: "Poppins",
+                                fontSize: 10,
+                                color: Colors.grey,
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Container(
+                          width: MediaQuery.of(context).size.width * 0.4,
+                          child: Text(
+                            "Alumni UMP",
+                            style: TextStyle(
+                              fontFamily: "Poppins",
+                              fontSize: 12,
+                              color: Colors.grey,
+                              fontStyle: FontStyle.italic,
+                            ),
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 1,
+                            softWrap: true,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: TextFormField(
+              readOnly: true,
+              keyboardType: TextInputType.multiline,
+              textInputAction: TextInputAction.newline,
+              maxLines: 8,
+              style: TextStyle(fontSize: 20.0),
+              // maxLength: 5,
+              decoration: InputDecoration(
+                filled: true,
+                fillColor: Colors.grey.shade200,
                 labelStyle: TextStyle(fontSize: 20),
                 hintText: 'This example student need money',
                 hintStyle: TextStyle(fontSize: 20),
