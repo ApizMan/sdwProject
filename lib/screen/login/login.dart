@@ -13,42 +13,24 @@ class Login extends StatefulWidget {
   State<Login> createState() => _LoginState();
 }
 
-List<String> typeUser = [
-  "Staff",
-  "Alumni",
-  "Student",
-];
-
 class _LoginState extends State<Login> {
-  String dropdownValue = typeUser.first;
-  //Initialiaze Firebase App
-  Future<FirebaseApp> _initializeFirebase() async {
-    FirebaseApp firebaseApp = await Firebase.initializeApp();
-    return firebaseApp;
+  //text controller
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+
+  Future signIn() async {
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+      email: _emailController.text.trim(),
+      password: _passwordController.text.trim(),
+    );
   }
 
-  //Login Function
-  static Future<User?> loginUsingEmailPassword(
-      {required String email,
-      required String password,
-      required BuildContext context}) async {
-    FirebaseAuth auth = FirebaseAuth.instance;
-    User? user;
-    try {
-      UserCredential userCredential = await auth.signInWithEmailAndPassword(
-          email: email, password: password);
-      user = userCredential.user;
-    } on FirebaseAuthException catch (e) {
-      if (e.code == 'user-not-found') {
-        print("No User found for that email");
-      }
-    }
-
-    return user;
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
   }
-
-  TextEditingController _emailController = TextEditingController();
-  TextEditingController _passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -56,10 +38,12 @@ class _LoginState extends State<Login> {
       child: GestureDetector(
         onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
         child: Scaffold(
-          body: FutureBuilder(
-              future: _initializeFirebase(),
+          body: StreamBuilder<User?>(
+              stream: FirebaseAuth.instance.authStateChanges(),
               builder: (context, snapshot) {
-                if (snapshot.connectionState == ConnectionState.done) {
+                if (snapshot.hasData) {
+                  return Navigation();
+                } else {
                   return Container(
                     width: double.infinity,
                     height: double.infinity,
@@ -72,7 +56,7 @@ class _LoginState extends State<Login> {
                     child: SingleChildScrollView(
                       physics: BouncingScrollPhysics(),
                       child: AspectRatio(
-                        aspectRatio: 9 / 16,
+                        aspectRatio: 7 / 10,
                         child: Center(
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -191,48 +175,6 @@ class _LoginState extends State<Login> {
                               ),
                               //space
                               const SizedBox(
-                                height: 10,
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.fromLTRB(
-                                    24.0, 10, 24.0, 0),
-                                child: Container(
-                                  height: 60,
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    border: Border.all(
-                                      width: 2,
-                                      color: Colors.black12,
-                                    ),
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color: Colors.black26,
-                                        spreadRadius: 3.0,
-                                        blurRadius: 3.0,
-                                      ),
-                                    ],
-                                    borderRadius: BorderRadius.circular(30),
-                                  ),
-                                  child: DropdownButtonFormField(
-                                    elevation: 0,
-                                    onChanged: (value) {},
-                                    decoration: InputDecoration(
-                                      border: OutlineInputBorder(
-                                        borderSide: BorderSide.none,
-                                      ),
-                                    ),
-                                    items: typeUser
-                                        .map<DropdownMenuItem<String>>(
-                                            (String value) {
-                                      return DropdownMenuItem(
-                                          value: value, child: Text(value));
-                                    }).toList(),
-                                    value: dropdownValue,
-                                  ),
-                                ),
-                              ),
-                              //space
-                              const SizedBox(
                                 height: 70,
                               ),
                               //sign in button
@@ -240,20 +182,7 @@ class _LoginState extends State<Login> {
                                 padding: const EdgeInsets.symmetric(
                                     horizontal: 25.0),
                                 child: GestureDetector(
-                                  onTap: () async {
-                                    User? user = await loginUsingEmailPassword(
-                                      email: _emailController.text,
-                                      password: _passwordController.text,
-                                      context: context,
-                                    );
-                                    print(user);
-                                    if (user != null) {
-                                      Navigator.of(context)
-                                          .push(MaterialPageRoute(
-                                        builder: (context) => Navigation(),
-                                      ));
-                                    }
-                                  },
+                                  onTap: signIn,
                                   child: Container(
                                     padding: const EdgeInsets.symmetric(
                                       vertical: 15.0,
@@ -294,10 +223,6 @@ class _LoginState extends State<Login> {
                         ),
                       ),
                     ),
-                  );
-                } else {
-                  return Center(
-                    child: CircularProgressIndicator(),
                   );
                 }
               }),

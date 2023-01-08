@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fkaa_donation/screen/alumni/profile/components/alumni_profile_choice.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/src/widgets/container.dart';
@@ -11,6 +12,8 @@ class AlumniProfileContent extends StatefulWidget {
 }
 
 class _AlumniProfileContentState extends State<AlumniProfileContent> {
+  final userEmail = FirebaseAuth.instance.currentUser!;
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -44,7 +47,7 @@ class _AlumniProfileContentState extends State<AlumniProfileContent> {
             ),
           ),
           Text(
-            "akmalazhar@alumni.ump.edu.my",
+            userEmail.email!,
             style: TextStyle(
               fontSize: 14,
               fontFamily: "Poppins",
