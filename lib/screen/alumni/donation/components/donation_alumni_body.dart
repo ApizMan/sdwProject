@@ -89,13 +89,20 @@ class _DonationAlumniBodyState extends State<DonationAlumniBody> {
                       Positioned(
                         top: 195,
                         right: -30,
-                        child: CustomButtonNavigator(
-                          text_elevateButton: "Donate",
-                          navigation: false,
-                          icon_prefix: Icons.track_changes_rounded,
-                          icon_navigate: Icons.arrow_back,
-                          text: "Yayasan UMP",
-                          onPress: DonationPayment(),
+                        child: GestureDetector(
+                          onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => DonationPayment(),
+                            ),
+                          ),
+                          child: CustomButtonNavigator(
+                            text_elevateButton: "Donate",
+                            navigation: false,
+                            icon_prefix: Icons.track_changes_rounded,
+                            icon_navigate: Icons.arrow_back,
+                            text: "Yayasan UMP",
+                          ),
                         ),
                       ),
                     ],
