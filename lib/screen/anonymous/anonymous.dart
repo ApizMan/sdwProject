@@ -1,23 +1,22 @@
 import 'package:fkaa_donation/public_component/custom_layout.dart';
-import 'package:fkaa_donation/screen/alumni/donation/components/donation_alumni_body.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:fkaa_donation/screen/anonymous/components/donation_anonymous_body.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
-class DonationAlumni extends StatefulWidget {
-  const DonationAlumni({super.key});
+class Anonymous extends StatefulWidget {
+  const Anonymous({super.key});
 
   @override
-  State<DonationAlumni> createState() => _DonationAlumniState();
+  State<Anonymous> createState() => _AnonymousState();
 }
 
-class _DonationAlumniState extends State<DonationAlumni> {
+class _AnonymousState extends State<Anonymous> {
   @override
   Widget build(BuildContext context) {
     return const CustomLayout(
       haveBackButton: false,
-      body: DonationAlumniBody(),
+      body: DonationAnonymousBody(),
       title: "Donation",
     );
   }

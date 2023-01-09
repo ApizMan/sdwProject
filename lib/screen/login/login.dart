@@ -1,5 +1,5 @@
 import 'package:fkaa_donation/constant.dart';
-import 'package:fkaa_donation/screen/navigation_bar/navigation.dart';
+import 'package:fkaa_donation/screen/anonymous/anonymous.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -199,17 +199,7 @@ class _LoginState extends State<Login> {
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 25.0),
                         child: GestureDetector(
-                          onTap: () {
-                            setState(() {
-                              Navigator.pop(context);
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => Navigation(),
-                                ),
-                              );
-                            });
-                          },
+                          onTap: () {},
                           child: Container(
                             padding: const EdgeInsets.symmetric(
                               vertical: 15.0,
@@ -240,7 +230,13 @@ class _LoginState extends State<Login> {
                             decoration: TextDecoration.underline,
                           ),
                         ),
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => Anonymous(),
+                              ));
+                        },
                       ),
                       SizedBox(
                         height: 20,
