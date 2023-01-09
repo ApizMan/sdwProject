@@ -35,7 +35,7 @@ class _DonationPaymentBodyState extends State<DonationPaymentBody> {
               color: kButton,
             ),
             child: Text(
-              "Sign In",
+              "Payment",
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 16,

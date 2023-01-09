@@ -221,7 +221,8 @@ class _LoginState extends State<Login> {
                                   ),
                                 ),
                                 onTap: () {
-                                  Navigator.of(context).pushReplacement(
+                                  Navigator.push(
+                                    context,
                                     MaterialPageRoute(
                                       builder: (context) => Anonymous(),
                                     ),
