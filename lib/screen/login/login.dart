@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:fkaa_donation/constant.dart';
 import 'package:fkaa_donation/database/database.dart';
+import 'package:fkaa_donation/screen/anonymous/anonymous.dart';
 import 'package:fkaa_donation/screen/navigation/alumni/navigation_alumni.dart';
 import 'package:fkaa_donation/screen/navigation/staff/navigation_staff.dart';
 import 'package:flutter/material.dart';
@@ -219,7 +220,13 @@ class _LoginState extends State<Login> {
                                     decoration: TextDecoration.underline,
                                   ),
                                 ),
-                                onTap: () {},
+                                onTap: () {
+                                  Navigator.of(context).pushReplacement(
+                                    MaterialPageRoute(
+                                      builder: (context) => Anonymous(),
+                                    ),
+                                  );
+                                },
                               ),
                               SizedBox(
                                 height: 20,

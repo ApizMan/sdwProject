@@ -24,6 +24,7 @@ class _AnonymousLetterState extends State<AnonymousLetter> {
                 child: IconButton(
                   onPressed: () {
                     Navigator.pop(context);
+                    Navigator.pop(context);
                   },
                   icon: Icon(Icons.close),
                 ),
@@ -65,6 +66,5 @@ class _AnonymousLetterState extends State<AnonymousLetter> {
         ),
       ),
     );
-    String textToShow = 'Thank you for your donation.';
   }
 }

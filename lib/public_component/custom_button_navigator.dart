@@ -11,6 +11,7 @@ class CustomButtonNavigator extends StatefulWidget {
   final String text;
   final bool navigation;
   final String? text_elevateButton;
+  final Widget? onPress;
   const CustomButtonNavigator({
     super.key,
     required this.icon_prefix,
@@ -18,6 +19,7 @@ class CustomButtonNavigator extends StatefulWidget {
     required this.text,
     required this.navigation,
     this.text_elevateButton,
+    this.onPress,
   });
 
   @override
@@ -72,7 +74,13 @@ class _CustomButtonNavigatorState extends State<CustomButtonNavigator> {
                       width: 80,
                     ),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => widget.onPress!,
+                            ));
+                      },
                       child: Text(widget.text_elevateButton!),
                     ),
                   ],
