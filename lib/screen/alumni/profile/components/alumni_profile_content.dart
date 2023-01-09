@@ -7,14 +7,14 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
 class AlumniProfileContent extends StatefulWidget {
-  QuerySnapshot? querySnapshot;
-  AlumniProfileContent({super.key, this.querySnapshot});
+  AlumniProfileContent({super.key});
 
   @override
   State<AlumniProfileContent> createState() => _AlumniProfileContentState();
 }
 
 class _AlumniProfileContentState extends State<AlumniProfileContent> {
+  final userEmail = FirebaseAuth.instance.currentUser;
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -40,7 +40,7 @@ class _AlumniProfileContentState extends State<AlumniProfileContent> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
-            widget.querySnapshot.toString(),
+            'Akmal Azhar',
             style: TextStyle(
               fontSize: 16,
               fontFamily: "Poppins",
@@ -48,7 +48,7 @@ class _AlumniProfileContentState extends State<AlumniProfileContent> {
             ),
           ),
           Text(
-            "akmalazhar@alumni.ump.edu.my",
+            userEmail!.email!,
             style: TextStyle(
               fontSize: 14,
               fontFamily: "Poppins",
