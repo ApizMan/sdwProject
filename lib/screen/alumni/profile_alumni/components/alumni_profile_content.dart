@@ -7,8 +7,7 @@ import 'package:flutter/src/widgets/framework.dart';
 
 // ignore: must_be_immutable
 class AlumniProfileContent extends StatefulWidget {
-  QuerySnapshot? querySnapshot;
-  AlumniProfileContent({super.key, this.querySnapshot});
+  AlumniProfileContent({super.key});
 
   @override
   State<AlumniProfileContent> createState() => _AlumniProfileContentState();
@@ -41,7 +40,7 @@ class _AlumniProfileContentState extends State<AlumniProfileContent> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
-            widget.querySnapshot.toString(),
+            "Alumni",
             style: TextStyle(
               fontSize: 16,
               fontFamily: "Poppins",

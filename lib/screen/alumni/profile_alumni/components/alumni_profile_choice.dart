@@ -42,11 +42,20 @@ class _AlumniProfileChoiceState extends State<AlumniProfileChoice> {
         SizedBox(
           height: 15,
         ),
-        CustomButtonNavigator(
-          navigation: true,
-          icon_navigate: Icons.arrow_forward_ios,
-          icon_prefix: Icons.money,
-          text: "Donation",
+        GestureDetector(
+          onTap: () {
+            Navigator.of(context).pushReplacement(
+              MaterialPageRoute(
+                builder: (context) => NavigationAlumni(selectNavDefault: 2),
+              ),
+            );
+          },
+          child: CustomButtonNavigator(
+            navigation: true,
+            icon_navigate: Icons.arrow_forward_ios,
+            icon_prefix: Icons.money,
+            text: "Donation",
+          ),
         ),
         SizedBox(
           height: 15,
