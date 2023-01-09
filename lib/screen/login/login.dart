@@ -38,7 +38,9 @@ class _LoginState extends State<Login> {
               builder: (context, snapshot) {
                 if (snapshot.hasData) {
                   if (snapshot.data!.email == "alumni@gmail.com") {
-                    return NavigationAlumni();
+                    return NavigationAlumni(
+                      selectNavDefault: 0,
+                    );
                   } else if (snapshot.data!.email == "staff@gmail.com") {
                     return NavigationStaff();
                   } else {

@@ -6,12 +6,15 @@ import 'package:fkaa_donation/public_component/custom_bottom_navigation_bar.dart
 import 'package:flutter/material.dart';
 
 class NavigationAlumni extends StatefulWidget {
+  int selectNavDefault;
+
+  NavigationAlumni({required this.selectNavDefault});
   @override
   _NavigationAlumniState createState() => _NavigationAlumniState();
 }
 
 class _NavigationAlumniState extends State<NavigationAlumni> {
-  int _selectedItem = 0;
+  late int _selectedItem = widget.selectNavDefault;
   //Options or page show in body when selected
   static List<Widget> _widgetOptions = <Widget>[
     HomePageAlumni(),
@@ -44,7 +47,7 @@ class _NavigationAlumniState extends State<NavigationAlumni> {
               },
             );
           },
-          defaultSelectedIndex: 0,
+          defaultSelectedIndex: widget.selectNavDefault,
         ),
         //Body content of selected option from navigation bar
         body: _widgetOptions.elementAt(_selectedItem),

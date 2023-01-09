@@ -1,6 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fkaa_donation/public_component/custom_button_navigator.dart';
 import 'package:fkaa_donation/screen/alumni/profile_alumni/edit_profile/edit_alumni_profile.dart';
+import 'package:fkaa_donation/screen/login/login.dart';
+import 'package:fkaa_donation/screen/navigation/alumni/navigation_alumni.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
@@ -48,7 +50,14 @@ class _AlumniProfileChoiceState extends State<AlumniProfileChoice> {
           height: 15,
         ),
         GestureDetector(
-          onTap: () => FirebaseAuth.instance.signOut(),
+          onTap: () {
+            setState(() {
+              FirebaseAuth.instance.signOut();
+              Navigator.of(context).pushReplacement(MaterialPageRoute(
+                builder: (context) => Login(),
+              ));
+            });
+          },
           child: CustomButtonNavigator(
             navigation: true,
             icon_navigate: Icons.arrow_forward_ios,
