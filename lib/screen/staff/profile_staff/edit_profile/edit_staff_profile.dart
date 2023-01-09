@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
+import 'components/edit_staff_profile_body.dart';
+
 class EditStaffProfile extends StatefulWidget {
   const EditStaffProfile({super.key});
 
@@ -18,7 +20,7 @@ class _EditStaffProfileState extends State<EditStaffProfile> {
     return CustomLayout(
       haveBackButton: true,
       backButton: Icons.arrow_back,
-      body: EditAlumniProfileBody(),
+      body: EditStaffProfileBody(),
       title: "My Profile",
     );
   }

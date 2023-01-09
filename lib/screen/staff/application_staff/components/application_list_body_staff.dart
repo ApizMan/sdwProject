@@ -58,13 +58,7 @@ class _ApplicationListBodyStaffState extends State<ApplicationListBodyStaff> {
                 time: timeHistory[index],
                 description: description[index],
                 textLink: "Click for details",
-                onPressDetail: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => ApprovalDetailsStaff(),
-                      ));
-                },
+                onPressDetail: ApprovalDetailsStaff(),
                 onPressAccept: ApplicationFormStaff(),
                 onPressDecline: ApplicationFormStaff(),
               );

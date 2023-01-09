@@ -6,6 +6,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
+// ignore: must_be_immutable
 class AlumniProfileContent extends StatefulWidget {
   QuerySnapshot? querySnapshot;
   AlumniProfileContent({super.key, this.querySnapshot});
