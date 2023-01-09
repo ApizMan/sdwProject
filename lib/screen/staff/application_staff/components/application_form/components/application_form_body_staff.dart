@@ -139,7 +139,7 @@ class _ApplicationFormBodyStaffState extends State<ApplicationFormBodyStaff> {
                 filled: true,
                 fillColor: Colors.grey.shade200,
                 labelStyle: TextStyle(fontSize: 20),
-                hintText: 'This example student need money',
+                hintText: 'This student need money due to disastrous flood',
                 hintStyle: TextStyle(fontSize: 20),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(32.0)),
@@ -205,7 +205,7 @@ class _ApplicationFormBodyStaffState extends State<ApplicationFormBodyStaff> {
                         Container(
                           width: MediaQuery.of(context).size.width * 0.6,
                           child: Text(
-                            "Akmal Azhar",
+                            "Syuhada Shahrin",
                             style: TextStyle(
                               fontFamily: "Poppins",
                               fontSize: 18,
@@ -229,7 +229,7 @@ class _ApplicationFormBodyStaffState extends State<ApplicationFormBodyStaff> {
                               width: 2,
                             ),
                             Text(
-                              "45m",
+                              "120m",
                               style: TextStyle(
                                 fontFamily: "Poppins",
                                 fontSize: 10,
@@ -276,7 +276,8 @@ class _ApplicationFormBodyStaffState extends State<ApplicationFormBodyStaff> {
                 filled: true,
                 fillColor: Colors.grey.shade200,
                 labelStyle: TextStyle(fontSize: 20),
-                hintText: 'This example student need money',
+                hintText:
+                    'This student needs money as they are affected by flood',
                 hintStyle: TextStyle(fontSize: 20),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(32.0)),

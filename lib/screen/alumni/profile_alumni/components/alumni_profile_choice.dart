@@ -1,4 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:fkaa_donation/main.dart';
 import 'package:fkaa_donation/public_component/custom_button_navigator.dart';
 import 'package:fkaa_donation/screen/alumni/profile_alumni/edit_profile/edit_alumni_profile.dart';
 import 'package:fkaa_donation/screen/login/login.dart';
