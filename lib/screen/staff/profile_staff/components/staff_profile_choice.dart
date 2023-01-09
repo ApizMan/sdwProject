@@ -25,7 +25,6 @@ class _StaffProfileChoiceState extends State<StaffProfileChoice> {
           icon_navigate: Icons.arrow_forward_ios,
           icon_prefix: Icons.person,
           text: "My Profile",
-          onPressNavigate: EditAlumniProfile(),
         ),
         SizedBox(
           height: 15,

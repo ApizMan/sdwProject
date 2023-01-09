@@ -1,3 +1,6 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:fkaa_donation/main.dart';
 import 'package:fkaa_donation/public_component/custom_button_navigator.dart';
 import 'package:fkaa_donation/screen/alumni/profile_alumni/edit_profile/edit_alumni_profile.dart';
 import 'package:flutter/cupertino.dart';
@@ -20,12 +23,19 @@ class _AlumniProfileChoiceState extends State<AlumniProfileChoice> {
         // SizedBox(
         //   height: 30,
         // ),
-        CustomButtonNavigator(
-          navigation: true,
-          icon_navigate: Icons.arrow_forward_ios,
-          icon_prefix: Icons.person,
-          text: "My Profile",
-          onPressNavigate: EditAlumniProfile(),
+        GestureDetector(
+          onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => EditAlumniProfile(),
+            ),
+          ),
+          child: CustomButtonNavigator(
+            navigation: true,
+            icon_navigate: Icons.arrow_forward_ios,
+            icon_prefix: Icons.person,
+            text: "My Profile",
+          ),
         ),
         SizedBox(
           height: 15,
@@ -39,11 +49,14 @@ class _AlumniProfileChoiceState extends State<AlumniProfileChoice> {
         SizedBox(
           height: 15,
         ),
-        CustomButtonNavigator(
-          navigation: true,
-          icon_navigate: Icons.arrow_forward_ios,
-          icon_prefix: Icons.logout,
-          text: "Logout",
+        GestureDetector(
+          onTap: () => FirebaseAuth.instance.signOut(),
+          child: CustomButtonNavigator(
+            navigation: true,
+            icon_navigate: Icons.arrow_forward_ios,
+            icon_prefix: Icons.logout,
+            text: "Logout",
+          ),
         ),
       ],
     );
