@@ -1,13 +1,15 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:fkaa_donation/constant.dart';
-import 'package:fkaa_donation/screen/navigation_bar/navigation.dart';
+import 'package:fkaa_donation/database/database.dart';
+import 'package:fkaa_donation/screen/navigation/alumni/navigation_alumni.dart';
+import 'package:fkaa_donation/screen/navigation/staff/navigation_staff.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
 class Login extends StatefulWidget {
-  const Login({super.key});
+  Login({super.key});
 
   @override
   State<Login> createState() => _LoginState();
@@ -17,13 +19,6 @@ class _LoginState extends State<Login> {
   //text controller
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
-
-  Future signIn() async {
-    await FirebaseAuth.instance.signInWithEmailAndPassword(
-      email: _emailController.text.trim(),
-      password: _passwordController.text.trim(),
-    );
-  }
 
   @override
   void dispose() {
@@ -42,7 +37,13 @@ class _LoginState extends State<Login> {
               stream: FirebaseAuth.instance.authStateChanges(),
               builder: (context, snapshot) {
                 if (snapshot.hasData) {
-                  return Navigation();
+                  if (snapshot.data!.email == "alumni@gmail.com") {
+                    return NavigationAlumni();
+                  } else if (snapshot.data!.email == "staff@gmail.com") {
+                    return NavigationStaff();
+                  } else {
+                    return Text("Student");
+                  }
                 } else {
                   return Container(
                     width: double.infinity,
@@ -182,7 +183,10 @@ class _LoginState extends State<Login> {
                                 padding: const EdgeInsets.symmetric(
                                     horizontal: 25.0),
                                 child: GestureDetector(
-                                  onTap: signIn,
+                                  onTap: SignInUser(
+                                    email: _emailController,
+                                    password: _passwordController,
+                                  ).signIn,
                                   child: Container(
                                     padding: const EdgeInsets.symmetric(
                                       vertical: 15.0,
