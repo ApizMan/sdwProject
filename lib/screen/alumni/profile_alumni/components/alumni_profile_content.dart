@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:fkaa_donation/controller/controller.dart';
 import 'package:fkaa_donation/screen/alumni/profile_alumni/components/alumni_profile_choice.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/src/widgets/container.dart';
@@ -16,8 +15,7 @@ class AlumniProfileContent extends StatefulWidget {
 }
 
 class _AlumniProfileContentState extends State<AlumniProfileContent> {
-  final userEmail = FirebaseAuth.instance.currentUser!;
-
+  final userEmail = FirebaseAuth.instance.currentUser;
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -51,7 +49,7 @@ class _AlumniProfileContentState extends State<AlumniProfileContent> {
             ),
           ),
           Text(
-            userEmail.email!,
+            userEmail!.email!,
             style: TextStyle(
               fontSize: 14,
               fontFamily: "Poppins",
