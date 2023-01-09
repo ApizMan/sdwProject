@@ -7,6 +7,7 @@ import 'package:flutter/src/widgets/framework.dart';
 
 import 'application_form/application_form_staff.dart';
 import 'approval_staff/approval_details_staff.dart';
+import 'approval_staff/components/approval_details_staff_body.dart';
 
 class ApplicationListBodyStaff extends StatefulWidget {
   const ApplicationListBodyStaff({super.key});
@@ -57,7 +58,13 @@ class _ApplicationListBodyStaffState extends State<ApplicationListBodyStaff> {
                 time: timeHistory[index],
                 description: description[index],
                 textLink: "Click for details",
-                onPressDetail: ApprovalDetailsStaff(),
+                onPressDetail: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ApprovalDetailsStaff(),
+                      ));
+                },
                 onPressAccept: ApplicationFormStaff(),
                 onPressDecline: ApplicationFormStaff(),
               );

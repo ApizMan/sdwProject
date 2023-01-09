@@ -1,11 +1,14 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:fkaa_donation/controller/controller.dart';
 import 'package:fkaa_donation/screen/alumni/profile_alumni/components/alumni_profile_choice.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
 class AlumniProfileContent extends StatefulWidget {
-  const AlumniProfileContent({super.key});
+  QuerySnapshot? querySnapshot;
+  AlumniProfileContent({super.key, this.querySnapshot});
 
   @override
   State<AlumniProfileContent> createState() => _AlumniProfileContentState();
@@ -39,7 +42,7 @@ class _AlumniProfileContentState extends State<AlumniProfileContent> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
-            "Akmal Azhar",
+            widget.querySnapshot.toString(),
             style: TextStyle(
               fontSize: 16,
               fontFamily: "Poppins",

@@ -1,8 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:fkaa_donation/constant.dart';
-import 'package:fkaa_donation/screen/navigation_bar_alumni/navigation_alumni.dart';
-import 'package:fkaa_donation/screen/navigation_bar_staff/navigation_staff.dart';
+import 'package:fkaa_donation/screen/navigation/alumni/navigation_alumni.dart';
+import 'package:fkaa_donation/screen/navigation/staff/navigation_staff.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -43,7 +43,7 @@ class _LoginState extends State<Login> {
               stream: FirebaseAuth.instance.authStateChanges(),
               builder: (context, snapshot) {
                 if (snapshot.hasData) {
-                  return NavigationStaff();
+                  return NavigationAlumni();
                 } else {
                   return Container(
                     width: double.infinity,
@@ -57,7 +57,7 @@ class _LoginState extends State<Login> {
                     child: SingleChildScrollView(
                       physics: BouncingScrollPhysics(),
                       child: AspectRatio(
-                        aspectRatio: 7 / 10,
+                        aspectRatio: 9 / 13,
                         child: Center(
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,

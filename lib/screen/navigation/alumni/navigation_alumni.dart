@@ -2,23 +2,22 @@ import 'package:fkaa_donation/screen/alumni/application_alumni/application_alumn
 import 'package:fkaa_donation/screen/alumni/donation_alumni/donation_alumni.dart';
 import 'package:fkaa_donation/screen/alumni/homepage_alumni/homepage_alumni.dart';
 import 'package:fkaa_donation/screen/alumni/profile_alumni/alumni_profile.dart';
-import 'package:fkaa_donation/screen/navigation_bar_alumni/custom_bottom_navigation_bar.dart';
-import 'package:fkaa_donation/screen/staff/homepage_staff/homepage_staff.dart';
+import 'package:fkaa_donation/public_component/custom_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 
-import '../staff/profile_staff/staff_profile.dart';
-
-class NavigationStaff extends StatefulWidget {
+class NavigationAlumni extends StatefulWidget {
   @override
-  _NavigationStaffState createState() => _NavigationStaffState();
+  _NavigationAlumniState createState() => _NavigationAlumniState();
 }
 
-class _NavigationStaffState extends State<NavigationStaff> {
+class _NavigationAlumniState extends State<NavigationAlumni> {
   int _selectedItem = 0;
   //Options or page show in body when selected
   static List<Widget> _widgetOptions = <Widget>[
-    HomePageStaff(),
-    StaffProfile(),
+    HomePageAlumni(),
+    AlumniProfile(),
+    DonationAlumni(),
+    ApplicationAlumni(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -28,6 +27,8 @@ class _NavigationStaffState extends State<NavigationStaff> {
           iconList: [
             Icons.home_outlined,
             Icons.person_outline_outlined,
+            Icons.money,
+            Icons.folder,
           ],
           onChange: (val) {
             setState(

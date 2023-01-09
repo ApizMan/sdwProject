@@ -49,7 +49,7 @@ class _AlumniProfileBodyState extends State<AlumniProfileBody> {
                 ),
               ),
             ),
-            const AlumniProfileContent(),
+            AlumniProfileContent(),
           ],
         ),
       ),
