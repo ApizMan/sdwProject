@@ -1,19 +1,19 @@
 import 'package:fkaa_donation/constant.dart';
 import 'package:fkaa_donation/public_component/custom_button_navigator.dart';
-import 'package:fkaa_donation/screen/anonymous/components/donation_paymant/donation_payment.dart';
+import 'package:fkaa_donation/screen/alumni/donation_alumni/components/donation_paymant/donation_payment.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
-class DonationAnonymousBody extends StatefulWidget {
-  const DonationAnonymousBody({super.key});
+class DonationAlumniBody extends StatefulWidget {
+  const DonationAlumniBody({super.key});
 
   @override
-  State<DonationAnonymousBody> createState() => _DonationAnonymousBodyState();
+  State<DonationAlumniBody> createState() => _DonationAlumniBodyState();
 }
 
-class _DonationAnonymousBodyState extends State<DonationAnonymousBody> {
+class _DonationAlumniBodyState extends State<DonationAlumniBody> {
   List<String> img_donation = [
     "assets/images/img-donation1.png",
     "assets/images/img-donation2.png",
@@ -91,10 +91,11 @@ class _DonationAnonymousBodyState extends State<DonationAnonymousBody> {
                         right: -30,
                         child: GestureDetector(
                           onTap: () => Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => DonationPayment(),
-                              )),
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => DonationPayment(),
+                            ),
+                          ),
                           child: CustomButtonNavigator(
                             text_elevateButton: "Donate",
                             navigation: false,
