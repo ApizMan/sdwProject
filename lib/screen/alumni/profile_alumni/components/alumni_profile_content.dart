@@ -1,9 +1,12 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:fkaa_donation/database/Model/user_model.dart';
 import 'package:fkaa_donation/screen/alumni/profile_alumni/components/alumni_profile_choice.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:fkaa_donation/database/database.dart';
+import 'package:provider/provider.dart';
 
 // ignore: must_be_immutable
 class AlumniProfileContent extends StatefulWidget {

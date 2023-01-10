@@ -15,8 +15,7 @@ class _AnonymousState extends State<Anonymous> {
   @override
   Widget build(BuildContext context) {
     return const CustomLayout(
-      backButton: Icons.arrow_back,
-      haveBackButton: true,
+      haveBackButton: false,
       body: DonationAnonymousBody(),
       title: "Donation",
     );

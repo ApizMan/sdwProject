@@ -1,7 +1,9 @@
+import 'package:auth/auth.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:fkaa_donation/constant.dart';
-import 'package:fkaa_donation/database/database.dart';
+import 'package:fkaa_donation/controller/login_controller.dart';
+import 'package:fkaa_donation/controller/anonymous_controller.dart';
 import 'package:fkaa_donation/screen/anonymous/anonymous.dart';
 import 'package:fkaa_donation/screen/navigation/alumni/navigation_alumni.dart';
 import 'package:fkaa_donation/screen/navigation/staff/navigation_staff.dart';
@@ -17,6 +19,8 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  final AnonymousController _anonymousLogin = AnonymousController();
+
   //text controller
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
@@ -38,11 +42,11 @@ class _LoginState extends State<Login> {
               stream: FirebaseAuth.instance.authStateChanges(),
               builder: (context, snapshot) {
                 if (snapshot.hasData) {
-                  if (snapshot.data!.email == "alumni@gmail.com") {
+                  if (snapshot.data!.email == "alumni@ump.edu.my") {
                     return NavigationAlumni(
                       selectNavDefault: 0,
                     );
-                  } else if (snapshot.data!.email == "staff@gmail.com") {
+                  } else if (snapshot.data!.email == "staff@ump.edu.my") {
                     return NavigationStaff();
                   } else {
                     return Text("Student");
@@ -186,7 +190,7 @@ class _LoginState extends State<Login> {
                                 padding: const EdgeInsets.symmetric(
                                     horizontal: 25.0),
                                 child: GestureDetector(
-                                  onTap: SignInUser(
+                                  onTap: LoginController(
                                     email: _emailController,
                                     password: _passwordController,
                                   ).signIn,
@@ -220,13 +224,20 @@ class _LoginState extends State<Login> {
                                     decoration: TextDecoration.underline,
                                   ),
                                 ),
-                                onTap: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => Anonymous(),
-                                    ),
-                                  );
+                                onTap: () async {
+                                  dynamic result =
+                                      await _anonymousLogin.signInAnonymous();
+                                  if (result == null) {
+                                    print('Error for Login as Anonymous');
+                                  } else {
+                                    Navigator.of(context).pushReplacement(
+                                      MaterialPageRoute(
+                                        builder: (context) => Anonymous(),
+                                      ),
+                                    );
+                                    print('Login as Anonymous');
+                                    print(result.uid);
+                                  }
                                 },
                               ),
                               SizedBox(
