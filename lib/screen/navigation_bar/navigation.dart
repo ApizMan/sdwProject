@@ -1,8 +1,6 @@
-import 'package:fkaa_donation/screen/alumni/application/application_alumni.dart';
-import 'package:fkaa_donation/screen/alumni/donation/donation_alumni.dart';
-import 'package:fkaa_donation/screen/alumni/homepage_alumni/homepage_alumni.dart';
-import 'package:fkaa_donation/screen/alumni/profile/alumni_profile.dart';
 import 'package:fkaa_donation/screen/navigation_bar/custom_bottom_navigation_bar.dart';
+import 'package:fkaa_donation/screen/student/homepage_student/homepage_student.dart';
+import 'package:fkaa_donation/screen/student/profile/student_profile.dart';
 import 'package:flutter/material.dart';
 
 class Navigation extends StatefulWidget {
@@ -14,10 +12,8 @@ class _NavigationState extends State<Navigation> {
   int _selectedItem = 0;
   //Options or page show in body when selected
   static List<Widget> _widgetOptions = <Widget>[
-    HomePageAlumni(),
-    AlumniProfile(),
-    DonationAlumni(),
-    ApplicationAlumni(),
+    HomePageStudent(),
+    StudentProfile()
   ];
   @override
   Widget build(BuildContext context) {
@@ -27,8 +23,6 @@ class _NavigationState extends State<Navigation> {
           iconList: [
             Icons.home_outlined,
             Icons.person_outline_outlined,
-            Icons.money,
-            Icons.folder,
           ],
           onChange: (val) {
             setState(
