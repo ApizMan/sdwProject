@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fkaa_donation/constant.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +12,6 @@ class CustomButtonNavigator extends StatefulWidget {
   final bool navigation;
   final String? text_elevateButton;
   final Widget? onPress;
-  final Widget? onPressNavigate;
   const CustomButtonNavigator({
     super.key,
     required this.icon_prefix,
@@ -20,7 +20,6 @@ class CustomButtonNavigator extends StatefulWidget {
     required this.navigation,
     this.text_elevateButton,
     this.onPress,
-    this.onPressNavigate,
   });
 
   @override
@@ -30,74 +29,63 @@ class CustomButtonNavigator extends StatefulWidget {
 class _CustomButtonNavigatorState extends State<CustomButtonNavigator> {
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => widget.onPressNavigate!,
-          ),
-        );
-      },
-      child: Container(
-        height: MediaQuery.of(context).size.height * 0.06,
-        margin: EdgeInsets.symmetric(horizontal: 50),
-        decoration: widget.navigation == true
-            ? BoxDecoration(
-                color: kWhite,
-                borderRadius: BorderRadius.circular(10),
-                boxShadow: [
-                  BoxShadow(
-                    offset: Offset.fromDirection(11),
-                    color: Colors.black26,
-                    spreadRadius: 1.0,
-                    blurRadius: 10.0,
-                  ),
-                ],
-              )
-            : null,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Row(
-              children: [
-                SizedBox(
-                  width: 20,
+    return Container(
+      height: MediaQuery.of(context).size.height * 0.06,
+      margin: EdgeInsets.symmetric(horizontal: 50),
+      decoration: widget.navigation == true
+          ? BoxDecoration(
+              color: kWhite,
+              borderRadius: BorderRadius.circular(10),
+              boxShadow: [
+                BoxShadow(
+                  offset: Offset.fromDirection(11),
+                  color: Colors.black26,
+                  spreadRadius: 1.0,
+                  blurRadius: 10.0,
                 ),
-                Icon(widget.icon_prefix),
-                SizedBox(
-                  width: 10,
-                ),
-                Text(widget.text),
-                widget.navigation == true
-                    ? SizedBox()
-                    : SizedBox(
-                        width: 30,
-                      ),
               ],
-            ),
-            widget.navigation == true
-                ? Icon(widget.icon_navigate)
-                : Row(
-                    children: [
-                      SizedBox(
-                        width: 80,
-                      ),
-                      TextButton(
-                        onPressed: () {
-                          Navigator.push(
+            )
+          : null,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Row(
+            children: [
+              SizedBox(
+                width: 20,
+              ),
+              Icon(widget.icon_prefix),
+              SizedBox(
+                width: 10,
+              ),
+              Text(widget.text),
+              widget.navigation == true
+                  ? SizedBox()
+                  : SizedBox(
+                      width: 30,
+                    ),
+            ],
+          ),
+          widget.navigation == true
+              ? Icon(widget.icon_navigate)
+              : Row(
+                  children: [
+                    SizedBox(
+                      width: 80,
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.push(
                             context,
                             MaterialPageRoute(
                               builder: (context) => widget.onPress!,
-                            ),
-                          );
-                        },
-                        child: Text(widget.text_elevateButton!),
-                      ),
-                    ],
-                  ),
-          ],
-        ),
+                            ));
+                      },
+                      child: Text(widget.text_elevateButton!),
+                    ),
+                  ],
+                ),
+        ],
       ),
     );
     ;

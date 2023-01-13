@@ -1,35 +1,35 @@
-import 'package:fkaa_donation/screen/student/homepage_student/components/item_body.dart';
-import 'package:fkaa_donation/screen/student/homepage_student/components/item_body_student.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
-class BodyHomepage extends StatefulWidget {
-  const BodyHomepage({super.key});
+import 'application_list_body_staff.dart';
+
+class ApplicationStaffBody extends StatefulWidget {
+  const ApplicationStaffBody({super.key});
 
   @override
-  State<BodyHomepage> createState() => _BodyHomepageState();
+  State<ApplicationStaffBody> createState() => _ApplicationStaffBodyState();
 }
 
-class _BodyHomepageState extends State<BodyHomepage> {
+class _ApplicationStaffBodyState extends State<ApplicationStaffBody> {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SizedBox(
-          height: 30,
+          height: 20,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             SizedBox(
-              width: 50,
+              width: 20,
             ),
             Text(
-              "Dashboard",
+              "List of Student's Application",
               style: TextStyle(
+                decoration: TextDecoration.underline,
                 fontSize: 18,
                 color: Colors.black,
                 fontWeight: FontWeight.bold,
@@ -44,10 +44,7 @@ class _BodyHomepageState extends State<BodyHomepage> {
             ),
           ],
         ),
-        SizedBox(
-          height: 20,
-        ),
-        const ItemBodyStudent(),
+        const ApplicationListBodyStaff(),
       ],
     );
   }

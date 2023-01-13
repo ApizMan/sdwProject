@@ -1,14 +1,14 @@
 import 'package:fkaa_donation/constant.dart';
-import 'package:fkaa_donation/screen/navigation_bar/navigation.dart';
+import 'package:fkaa_donation/screen/navigation/staff/navigation_staff.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
-class Loginstudent extends StatefulWidget {
-  const Loginstudent({super.key});
+class LoginStudent extends StatefulWidget {
+  const LoginStudent({super.key});
 
   @override
-  State<Loginstudent> createState() => _LoginState();
+  State<LoginStudent> createState() => _LoginStudentState();
 }
 
 List<String> typeUser = [
@@ -17,7 +17,7 @@ List<String> typeUser = [
   "Student",
 ];
 
-class _LoginState extends State<Loginstudent> {
+class _LoginStudentState extends State<LoginStudent> {
   String dropdownValue = typeUser.first;
 
   @override
@@ -105,7 +105,7 @@ class _LoginState extends State<Loginstudent> {
                                 prefixIcon: Icon(
                                   Icons.person,
                                 ),
-                                hintText: "ID Numbers",
+                                hintText: "ID Number",
                                 border: InputBorder.none,
                               ),
                             ),
@@ -202,12 +202,6 @@ class _LoginState extends State<Loginstudent> {
                           onTap: () {
                             setState(() {
                               Navigator.pop(context);
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => Navigation(),
-                                ),
-                              );
                             });
                           },
                           child: Container(

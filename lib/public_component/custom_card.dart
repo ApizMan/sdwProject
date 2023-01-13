@@ -10,7 +10,7 @@ class CustomCard extends StatefulWidget {
   final String description;
   final IconData iconTime;
   final String? textLink;
-  final Function? onPressDetail;
+  final Widget? onPressDetail;
   final Widget? onPressAccept;
   final Widget? onPressDecline;
   const CustomCard({
@@ -154,7 +154,11 @@ class _CustomCardState extends State<CustomCard> {
                           height: 5,
                         ),
                         GestureDetector(
-                          onTap: () => widget.onPressDetail,
+                          onTap: () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => widget.onPressDetail!,
+                              )),
                           child: Text(
                             widget.textLink!,
                             style: TextStyle(

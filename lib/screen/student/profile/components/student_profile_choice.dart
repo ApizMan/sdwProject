@@ -20,12 +20,20 @@ class _StudentProfileChoiceState extends State<StudentProfileChoice> {
         // SizedBox(
         //   height: 30,
         // ),
-        CustomButtonNavigator(
-          navigation: true,
-          icon_navigate: Icons.arrow_forward_ios,
-          icon_prefix: Icons.person,
-          text: "My Profile",
-          onPressNavigate: EditAlumniProfile(),
+        GestureDetector(
+          onTap: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => EditStudentProfile(),
+                ));
+          },
+          child: CustomButtonNavigator(
+            navigation: true,
+            icon_navigate: Icons.arrow_forward_ios,
+            icon_prefix: Icons.person,
+            text: "My Profile",
+          ),
         ),
         SizedBox(
           height: 15,

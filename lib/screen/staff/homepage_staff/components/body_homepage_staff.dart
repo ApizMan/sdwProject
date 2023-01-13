@@ -1,18 +1,17 @@
-import 'package:fkaa_donation/screen/student/homepage_student/components/item_body.dart';
-import 'package:fkaa_donation/screen/student/homepage_student/components/item_body_student.dart';
+import 'package:fkaa_donation/screen/staff/homepage_staff/components/item_body_staff.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
-class BodyHomepage extends StatefulWidget {
-  const BodyHomepage({super.key});
+class BodyHomepageStaff extends StatefulWidget {
+  const BodyHomepageStaff({super.key});
 
   @override
-  State<BodyHomepage> createState() => _BodyHomepageState();
+  State<BodyHomepageStaff> createState() => _BodyHomepageStaffState();
 }
 
-class _BodyHomepageState extends State<BodyHomepage> {
+class _BodyHomepageStaffState extends State<BodyHomepageStaff> {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -47,7 +46,7 @@ class _BodyHomepageState extends State<BodyHomepage> {
         SizedBox(
           height: 20,
         ),
-        const ItemBodyStudent(),
+        const ItemBodyStaff(),
       ],
     );
   }

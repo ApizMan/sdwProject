@@ -5,14 +5,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
-class ItemBodyAlumni extends StatefulWidget {
-  const ItemBodyAlumni({super.key});
+class ItemBodyStudent extends StatefulWidget {
+  const ItemBodyStudent({super.key});
 
   @override
-  State<ItemBodyAlumni> createState() => _ItemBodyAlumniState();
+  State<ItemBodyStudent> createState() => _ItemBodyStudentState();
 }
 
-class _ItemBodyAlumniState extends State<ItemBodyAlumni> {
+class _ItemBodyStudentState extends State<ItemBodyStudent> {
   List<String> imageCard = [
     'assets/images/imgCard.png',
     'assets/images/imgCard3.png'
