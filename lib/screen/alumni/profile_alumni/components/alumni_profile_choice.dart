@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:fkaa_donation/main.dart';
 import 'package:fkaa_donation/public_component/custom_button_navigator.dart';
+import 'package:fkaa_donation/screen/alumni/donation_alumni/donation_alumni.dart';
 import 'package:fkaa_donation/screen/alumni/profile_alumni/edit_profile/edit_alumni_profile.dart';
 import 'package:fkaa_donation/screen/login/login.dart';
 import 'package:fkaa_donation/screen/navigation/alumni/navigation_alumni.dart';
@@ -42,11 +43,20 @@ class _AlumniProfileChoiceState extends State<AlumniProfileChoice> {
         SizedBox(
           height: 15,
         ),
-        CustomButtonNavigator(
-          navigation: true,
-          icon_navigate: Icons.arrow_forward_ios,
-          icon_prefix: Icons.money,
-          text: "Donation",
+        GestureDetector(
+          onTap: () {
+            Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => NavigationAlumni(selectNavDefault: 2),
+                ));
+          },
+          child: CustomButtonNavigator(
+            navigation: true,
+            icon_navigate: Icons.arrow_forward_ios,
+            icon_prefix: Icons.money,
+            text: "Donation",
+          ),
         ),
         SizedBox(
           height: 15,
