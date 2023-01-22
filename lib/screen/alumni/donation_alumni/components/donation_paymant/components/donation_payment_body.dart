@@ -1,3 +1,7 @@
+import 'package:fkaa_donation/constant.dart';
+import 'package:fkaa_donation/screen/alumni/donation_alumni/components/donation_paymant/alumni_letter.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
@@ -11,6 +15,37 @@ class DonationPaymentBody extends StatefulWidget {
 class _DonationPaymentBodyState extends State<DonationPaymentBody> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 25.0, vertical: 250.0),
+        child: GestureDetector(
+          onTap: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => AlumniLetter(),
+                ));
+          },
+          child: Container(
+            padding: const EdgeInsets.symmetric(
+              vertical: 15.0,
+              horizontal: 120.0,
+            ),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(30),
+              color: kButton,
+            ),
+            child: Text(
+              "Payment",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 16,
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+    ;
   }
 }

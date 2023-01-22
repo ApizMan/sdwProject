@@ -55,7 +55,9 @@ class _LoginState extends State<Login> {
                   } else if (snapshot.data!.email == "staff@ump.edu.my") {
                     return NavigationStaff();
                   } else if (snapshot.data!.email == "student@ump.edu.my") {
-                    return NavigationStudent();
+                    return NavigationStudent(
+                      selectNavDefault: 0,
+                    );
                   } else {
                     return Login();
                   }

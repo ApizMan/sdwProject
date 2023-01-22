@@ -7,12 +7,15 @@ import 'package:flutter/material.dart';
 import '../../staff/profile_staff/staff_profile.dart';
 
 class NavigationStudent extends StatefulWidget {
+  int selectNavDefault;
+
+  NavigationStudent({required this.selectNavDefault});
   @override
   _NavigationStudentState createState() => _NavigationStudentState();
 }
 
 class _NavigationStudentState extends State<NavigationStudent> {
-  int _selectedItem = 0;
+  late int _selectedItem = widget.selectNavDefault;
   //Options or page show in body when selected
   static List<Widget> _widgetOptions = <Widget>[
     HomePageStudent(),
@@ -41,7 +44,7 @@ class _NavigationStudentState extends State<NavigationStudent> {
               },
             );
           },
-          defaultSelectedIndex: 0,
+          defaultSelectedIndex: widget.selectNavDefault,
         ),
         //Body content of selected option from navigation bar
         body: _widgetOptions.elementAt(_selectedItem),

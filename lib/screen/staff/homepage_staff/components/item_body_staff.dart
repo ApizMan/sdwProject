@@ -26,13 +26,6 @@ class _ItemBodyStaffState extends State<ItemBodyStaff> {
 
   @override
   Widget build(BuildContext context) {
-    // List<Future<Object?>> navigator = [
-    //   Navigator.push(
-    //       context,
-    //       MaterialPageRoute(
-    //         builder: (context) => NavigationStaff(),
-    //       ))
-    // ];
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
