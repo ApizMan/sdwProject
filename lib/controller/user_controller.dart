@@ -4,12 +4,12 @@ import 'package:fkaa_donation/database/Model/user_model.dart';
 import 'package:fkaa_donation/database/database.dart';
 import 'package:flutter/cupertino.dart';
 
-class LoginController {
+class UserController {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   TextEditingController email;
   TextEditingController password;
 
-  LoginController({required this.email, required this.password});
+  UserController({required this.email, required this.password});
 
   //create user obj based on FirebaseUser
   UserModel? _userFromFirebaseUser(User user) {
