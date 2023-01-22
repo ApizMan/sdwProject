@@ -1,5 +1,5 @@
 import 'package:firebase_core/firebase_core.dart';
-import 'package:fkaa_donation/screen/login%20student/loginstudent.dart';
+import 'package:fkaa_donation/screen/login/login.dart';
 import 'package:flutter/material.dart';
 
 void main() async {
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: LoginStudent(),
+      home: Login(),
     );
   }
 }

@@ -4,18 +4,24 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
-class ItemBodyStudent extends StatefulWidget {
-  const ItemBodyStudent({super.key});
+class ItemBody extends StatefulWidget {
+  const ItemBody({super.key});
 
   @override
-  State<ItemBodyStudent> createState() => _ItemBodyStudentState();
+  State<ItemBody> createState() => _ItemBodyState();
 }
 
-class _ItemBodyStudentState extends State<ItemBodyStudent> {
+class _ItemBodyState extends State<ItemBody> {
   List<String> imageCard = [
     'assets/images/imgCard.png',
-    'assets/images/imgCard3.png'
-        'assets/images/imgCard.png',
+    'assets/images/imgCard.png',
+    'assets/images/imgCard.png',
+    'assets/images/imgCard.png',
+    'assets/images/imgCard.png',
+    'assets/images/imgCard.png',
+    'assets/images/imgCard.png',
+    'assets/images/imgCard.png',
+    'assets/images/imgCard.png',
   ];
 
   @override
@@ -81,30 +87,25 @@ class _ItemBodyStudentState extends State<ItemBodyStudent> {
                                 SizedBox(
                                   height: 10,
                                 ),
-                                Text('Apply for Donation'),
+                                Text('Join for donation!'),
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     SizedBox(
                                       width: 15,
                                     ),
-                                    Text('Apply Now'),
+                                    Text('Donate Now'),
                                     SizedBox(
                                       width: 2,
                                     ),
-                                    IconButton(
-                                      icon: Icon(
-                                        Icons.arrow_circle_right_outlined,
-                                      ),
-                                      onPressed: () {
-                                        // Navigator.of(context)
-                                        //     .pushReplacement(MaterialPageRoute(
-                                        //   builder: (context) =>
-                                        //       NavigationAlumni(
-                                        //           selectNavDefault: 2),
-                                        // ));
-                                      },
-                                    )
+                                    GestureDetector(
+                                        onTap: () {},
+                                        child: IconButton(
+                                          icon: Icon(
+                                            Icons.arrow_circle_right_outlined,
+                                          ),
+                                          onPressed: () {},
+                                        ))
                                   ],
                                 ),
                               ],

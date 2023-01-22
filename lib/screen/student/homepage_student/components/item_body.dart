@@ -1,5 +1,4 @@
 import 'package:fkaa_donation/constant.dart';
-import 'package:fkaa_donation/screen/navigation/alumni/navigation_alumni.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
@@ -98,12 +97,12 @@ class _ItemBodyAlumniState extends State<ItemBodyAlumni> {
                                         Icons.arrow_circle_right_outlined,
                                       ),
                                       onPressed: () {
-                                        Navigator.of(context)
-                                            .pushReplacement(MaterialPageRoute(
-                                          builder: (context) =>
-                                              NavigationAlumni(
-                                                  selectNavDefault: 2),
-                                        ));
+                                        // Navigator.of(context)
+                                        //     .pushReplacement(MaterialPageRoute(
+                                        //   builder: (context) =>
+                                        //       NavigationAlumni(
+                                        //           selectNavDefault: 2),
+                                        // ));
                                       },
                                     )
                                   ],
