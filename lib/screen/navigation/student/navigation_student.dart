@@ -1,5 +1,7 @@
 import 'package:fkaa_donation/public_component/custom_bottom_navigation_bar.dart';
 import 'package:fkaa_donation/screen/staff/homepage_staff/homepage_staff.dart';
+import 'package:fkaa_donation/screen/student/homepage_student/homepage_student.dart';
+import 'package:fkaa_donation/screen/student/profile/student_profile.dart';
 import 'package:flutter/material.dart';
 
 import '../../staff/profile_staff/staff_profile.dart';
@@ -13,8 +15,8 @@ class _NavigationStudentState extends State<NavigationStudent> {
   int _selectedItem = 0;
   //Options or page show in body when selected
   static List<Widget> _widgetOptions = <Widget>[
-    HomePageStaff(),
-    StaffProfile(),
+    HomePageStudent(),
+    StudentProfile(),
   ];
   @override
   Widget build(BuildContext context) {

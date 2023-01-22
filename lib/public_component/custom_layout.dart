@@ -1,4 +1,6 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fkaa_donation/constant.dart';
+import 'package:fkaa_donation/screen/login/login.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -8,12 +10,14 @@ class CustomLayout extends StatefulWidget {
   final String title;
   final IconData? backButton;
   final bool haveBackButton;
+  final bool? isAnonymous;
   const CustomLayout({
     super.key,
     required this.body,
     required this.title,
     this.backButton,
     required this.haveBackButton,
+    this.isAnonymous,
   });
 
   @override
@@ -52,7 +56,16 @@ class _CustomLayoutState extends State<CustomLayout> {
                               widget.haveBackButton == true
                                   ? GestureDetector(
                                       onTap: () {
-                                        Navigator.pop(context);
+                                        widget.isAnonymous == true
+                                            ? setState(() {
+                                                FirebaseAuth.instance.signOut();
+                                                Navigator.of(context)
+                                                    .pushReplacement(
+                                                        MaterialPageRoute(
+                                                  builder: (context) => Login(),
+                                                ));
+                                              })
+                                            : Navigator.pop(context);
                                       },
                                       child: Icon(
                                         widget.backButton,

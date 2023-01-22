@@ -14,8 +14,8 @@ class ItemBodyStudent extends StatefulWidget {
 class _ItemBodyStudentState extends State<ItemBodyStudent> {
   List<String> imageCard = [
     'assets/images/imgCard.png',
-    'assets/images/imgCard3.png'
-        'assets/images/imgCard.png',
+    'assets/images/imgCard3.png',
+    'assets/images/imgCard.png',
   ];
 
   @override

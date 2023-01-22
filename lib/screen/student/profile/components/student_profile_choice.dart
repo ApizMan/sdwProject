@@ -1,4 +1,6 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fkaa_donation/public_component/custom_button_navigator.dart';
+import 'package:fkaa_donation/screen/login/login.dart';
 import 'package:fkaa_donation/screen/student/profile/edit_profile/edit_student_profile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -39,11 +41,21 @@ class _StudentProfileChoiceState extends State<StudentProfileChoice> {
           height: 15,
         ),
 
-        CustomButtonNavigator(
-          navigation: true,
-          icon_navigate: Icons.arrow_forward_ios,
-          icon_prefix: Icons.logout,
-          text: "Logout",
+        GestureDetector(
+          onTap: () {
+            setState(() {
+              FirebaseAuth.instance.signOut();
+              Navigator.of(context).pushReplacement(MaterialPageRoute(
+                builder: (context) => Login(),
+              ));
+            });
+          },
+          child: CustomButtonNavigator(
+            navigation: true,
+            icon_navigate: Icons.arrow_forward_ios,
+            icon_prefix: Icons.logout,
+            text: "Logout",
+          ),
         ),
       ],
     );
