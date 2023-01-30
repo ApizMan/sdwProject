@@ -282,32 +282,6 @@ class _StatusStudentBodyState extends State<StatusStudentBody> {
               ),
             ),
           ),
-          SizedBox(
-            height: 30,
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 25.0),
-            child: GestureDetector(
-              onTap: () => null,
-              child: Container(
-                padding: const EdgeInsets.symmetric(
-                  vertical: 15.0,
-                  horizontal: 120.0,
-                ),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: kButton,
-                ),
-                child: Text(
-                  "Submit",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16,
-                  ),
-                ),
-              ),
-            ),
-          ),
         ],
       ),
     );

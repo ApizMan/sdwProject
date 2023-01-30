@@ -122,7 +122,7 @@ class _ChangePasswordBodyState extends State<ChangePasswordBody> {
                   color: kButton,
                 ),
                 child: Text(
-                  "Sign In",
+                  "Change",
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 16,
